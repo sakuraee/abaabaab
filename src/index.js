@@ -1,10 +1,8 @@
-const Koa = require('koa');
-const app = new Koa();
+const express = require("express");
+const app = express();
 
-app.use(async ctx => {
-    ctx.body = 'Hello Vercel';
-});
+app.get("/", (req, res) => res.send("Express on Vercel"));
 
-app.listen(3008, () => {
-    console.log('3008项目启动')
-});
+app.listen(3000, () => console.log("Server ready on port 3000."));
+
+module.exports = app;
